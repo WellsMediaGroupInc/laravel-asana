@@ -44,7 +44,7 @@ class CustomFields extends Command
 
         $fields = collect($fields->data)->map(function($row) {
             return [
-                'id'      => $row->id,
+                'id'      => $row->gid,
                 'name'    => $row->name,
                 'type'    => $row->type,
                 'options' => isset($row->enum_options) ? implode(', ', Arr::pluck($row->enum_options, 'name')) : '',
